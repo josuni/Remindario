@@ -1,20 +1,18 @@
 import os
 
-import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='!')
 
-@client.event
-async def on_ready():
-    guild = discord.utils.get(client.guilds, name=GUILD)
-    print(
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})'
-    )
+@bot.command(name='set-reminder')
+async def set_reminder(ctx):
 
-client.run(TOKEN)
+    response = "not yet available"
+    await ctx.send(response)
+
+bot.run(TOKEN)
