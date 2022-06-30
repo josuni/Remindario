@@ -7,12 +7,12 @@ load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='/')
 
 @bot.command(name='set-reminder')
 async def set_reminder(ctx):
 
-    response = "not yet available"
+    response = "Hello Again"
     await ctx.send(response)
 
 bot.run(TOKEN)
