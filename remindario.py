@@ -62,9 +62,7 @@ async def set_reminder(ctx, who, what, when):
     def check_author(message):
         return message.author == requester
 
-    if (who == None or what == None or when == None):
-        await ctx.send('Sorry, not enough arguments. Try \'set-reminder\' instead.')
-    elif dt_is_incorrect_format(when):
+    if dt_is_incorrect_format(when):
         await ctx.send('Hmm, something is not formatted right. Try \'set-reminder\' instead.')
     else:
         m = 'Let\'s make sure I have this right. You would like to send a message to ' + who + ' about ' + '\"' + what + '\"' + ' at ' + when + '? y/n'
